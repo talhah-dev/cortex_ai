@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "screenshot": "playwright screenshot --channel=msedge --viewport-size=\"1440,900\" --wait-for-timeout=4000 https://cortex-ai-111.vercel.app/ .github/assets/preview.png"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1164.0",
