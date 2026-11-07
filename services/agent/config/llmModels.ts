@@ -9,7 +9,7 @@ let openrouterInstance: ChatOpenRouter | null = null;
 export const getGroqModel = () => {
     if (!groqInstance) {
         groqInstance = new ChatGroq({
-            apiKey: process.env.GROQ_API_KEY,
+            apiKey: process.env.GROQ_API_KEY || "gsk_placeholder_build_key",
             model: "openai/gpt-oss-120b",
         });
     }
@@ -19,7 +19,7 @@ export const getGroqModel = () => {
 export const getGeminiModel = () => {
     if (!geminiInstance) {
         geminiInstance = new ChatGoogleGenerativeAI({
-            apiKey: process.env.GOOGLE_API_KEY,
+            apiKey: process.env.GOOGLE_API_KEY || "AIzaSy_placeholder_build_key",
             model: "gemini-2.5-flash",
         });
     }
@@ -29,7 +29,7 @@ export const getGeminiModel = () => {
 export const getOpenRouterModel = () => {
     if (!openrouterInstance) {
         openrouterInstance = new ChatOpenRouter({
-            apiKey: process.env.OPENROUTER_API_KEY,
+            apiKey: process.env.OPENROUTER_API_KEY || "sk-or-v1-placeholder_build_key",
             model: "deepseek/deepseek-chat",
             temperature: 0,
             maxTokens: 2500,
